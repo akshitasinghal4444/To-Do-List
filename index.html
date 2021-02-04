@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>MY TODO LIST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="light-theme">
+        <div>
+            Theme: 
+        <button type="button" class="btn" id="dark-theme">Dark</button>
+        <button type="button" class="btn" id="light-theme">Light</button>
+        </div>
+        
+    </nav>
+
+    <div class="container light-theme">
+        <h2>My to-do list</h2>
+        <p>Double click an item to mark it complete.</p>
+        <form>
+            <input type="text" id="toDoEntryBox">
+            <button type="button" class="btn btn-info add-button">ADD</button>
+            <br>
+            <ol id="toDoList">
+
+            </ol>
+            <div class="row">
+                <div class="col-md-3">
+                    <button type="button" class=" btn btn-warning" id="clear-button">Clear Completed</button>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-danger" id="empty-button">Empty List</button>
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-success"  type="button" id="save-button">Save List</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
