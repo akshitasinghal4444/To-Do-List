@@ -1,5 +1,4 @@
 toggleToDoItemState=()=>{
-    // this.toggleClass("completed");
     $("li").click(function(){
         $(this).toggleClass("completed");
     });
@@ -11,7 +10,7 @@ newToDoItem=(itemText,completed)=>{
     toDoItem.appendChild(toDoText);
 
     if(completed){
-        toDoItem.addClass("completed");
+        toDoItem.className="completed";
     }
 
     toDoList.appendChild(toDoItem);
@@ -44,30 +43,27 @@ saveList=()=>{
     let i;
     for(i=0;i<toDoList.children.length;i++)
     {
-        // console.log(( toDoList.children.item(i)));
-        // alert(JSON.stringify( toDoList.children.item(i).innerText));
-        // console.log(toDoList.children.item(i).className.includes('completed'));
         let toDoInfo={
             "task":toDoList.children.item(i).innerText,
             "completed":toDoList.children.item(i).className.includes('completed')
         };
         toDos.push(toDoInfo);
-        // alert(JSON.stringify(toDoInfo));
     }
     localStorage.setItem("toDos",JSON.stringify(toDos));
-    // alert(JSON.stringify(toDos));
+    
     alert("Successfully saved your list 🐣");
 }
 
 loadList=()=>{
+    let toDos;
     if(localStorage.getItem("toDos")!=null)
     {
-        let toDos=JSON.parse(localStorage.getItem("toDos"));   
+        toDos=JSON.parse(localStorage.getItem("toDos"));   
     }
 
     for(let i=0;i<toDos.length;i++)
     {
-        console.log(JSON.stringify(toDos[i]));
+        console.log(toDos.length);
         newToDoItem(toDos[i].task,toDos[i].completed);
     }
     
